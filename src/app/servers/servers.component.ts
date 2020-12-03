@@ -12,6 +12,7 @@ export class ServersComponent implements OnInit {
   allowNewServer = false;
   serverCreationStatus = 'No server was created';
   serverName = 'Testserver';
+  serverCreated = false; //Set this property up to make new server creation only occur upon click event below. 
 
   constructor() { 
     setTimeout(() => {
@@ -23,6 +24,7 @@ export class ServersComponent implements OnInit {
   }
 
   onCreateServer() {
+    this.serverCreated = true; //based on export of serverCreated above, sets to true once click event occurs.
     this.serverCreationStatus = 'Server was created! Name is ' + this.serverName;
   }
   
